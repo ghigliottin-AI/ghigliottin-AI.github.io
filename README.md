@@ -27,13 +27,12 @@ We will provide a set of both training and testing games in JSON format:
 }
 ```
 
+The JSON file consists of an array of *games* which contains several JSON objects for each game. Each *game* has an identifier (*id*), an array of five *clues* and one *solution*.
 
-
-
-
-
-
-
+The challenge is organized with the support of Ghigliottiniamo, a mobile app available both for [Android](https://play.google.com/store/apps/details?id=io.quiztime.game&hl=en) and [iOS](https://apps.apple.com/it/app/ghigliottiniamo/id1447355292), to let people challenge each other live on the ghigliottina games aired on TV. 
+In a recent effort, Ghigliottiniamo has implemented an API to allow artificial solvers to take part in the competition. We will adopt this API to evaluate the systems participating in the EVALITA challenge. 
+All participants will obtain instructions on how to connect their system to the Ghigliottiniamo server. We will provide a JSON file containing 300 games along with their solution to be used as training data. The participants can integrate any knowledge resources in their systems except further games. In the evaluation window, 100 games (without solution) will be sent via API from the Ghigliottiniamo server to the systems enrolled in the challenge, which in turn will have to reply with the solution.
+We will exploit the evaluation approach implemented in Ghigliottiniamo which takes into account the accuracy of the system in predicting the correct solution. Moreover, we will try to compare the performance of artificial players with the ones of the users (humans) of the mobile app. This is the first time that we can compare artificial players against humans.
 
 ### References
 [<a name="1">1</a>] D. Ferrucci, E. Brown, J. Chu-Carroll, J. Fan, D. Gondek, A. A. Kalyanpur, A. Lally, J. W. Murdock, E. Nyberg, J. Prager, N. Schlaefer, and C.Welty, “Building Watson: An overview of the DeepQA project,” AI Magazine, vol. 31, no. 3, pp. 59–79, 2010.

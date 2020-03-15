@@ -46,3 +46,17 @@ We will exploit the evaluation approach implemented in Ghigliottiniamo which tak
 [<a name="5">5</a>] P. Basile, M. de Gemmis, P. Lops, and G. Semeraro, Solving a complex language game by using knowledge-based word associations discovery. IEEE Transactions on Computational Intelligence and AI in Games, vol. 8, no. 1, pp. 13-26, 2016.
 
 [<a name="6">6</a>] P. Basile, M. de Gemmis, P. Lops, and G. Semeraro, “Solving a complex language game by using knowledge-based word associations discovery”, IEEE Transactions on Computational Intelligence and AI in Games, vol. 8, no. 1, pp. 13-26, 2016.
+
+
+---
+
+### Organizers
+* Pierpaolo Basile, Dipartimento di Informatica, Università degli Studi di Bari Aldo Moro, pierpaolo.basile@uniba.it 
+* Lucia Siciliani, Dipartimento di Informatica, Università degli Studi di Bari Aldo Moro, lucia.siciliani@uniba.it 
+* Federico Sangati, Università di Napoli "L'Orientale" federico.sangati@gmail.com 
+* Johanna Monti, Università di Napoli "L'Orientale", jmonti@unior.it 
+* Antonio Pascucci, Università di Napoli "L'Orientale", apascucci@unior.it 
+* Marco Lovetere, Ghigliottiniamo, marlove@gmail.com 
+
+### Contacts
+If you have any questions, please contact us: <ghigliottinai.evalita@gmail.com>

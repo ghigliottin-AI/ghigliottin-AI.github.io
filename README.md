@@ -3,15 +3,6 @@
 ### News
 * **23rd March 2020:** [Guidelines]() are available online
 
-### Menu
-* [Task Description](#task-description)
-* [Development Data](#development-data)
-* [System Evaluation](#system-evaluation)
-* [Evaluation Metric](#evaluation-metric)
-* [Useful Tips](#useful-tips)
-* [Organizers](#organizers)
-* [Contacts](#contacts)
-
 ### Task Description
 Language games draw their challenge and excitement from the richness and ambiguity of natural language, and therefore have attracted the attention of researchers in the fields of Artificial Intelligence and Natural Language Processing.
 For instance, IBM WatsonTM is a system which successfully challenged human champions of Jeopardy!TM, a game in which contestants are presented with clues in the form of answers, and must phrase their responses in the form of a question [[1]](#1). Other researchers exploited question answering techniques to build an artificial player for _“Who Wants to be a Millionaire?”_ [[2]](#2). Another popular language game is solving crossword puzzles. The first experience reported in the literature is Proverb [[3]](#3), that exploits large libraries of clues and solutions to past crossword puzzles. WebCrow is the first solver for Italian crosswords [[4]](#4).
@@ -89,7 +80,6 @@ We list here a number of suggestions to help potential participants to the chall
 Previous systems [[6](#6), [7](#7), [8](#8)] have indicated some of the possible connection between clue words and solutions: word co-occurrencence in frequent collocations or idioms, word similarity or word relatedness.
 
 We list a number of useful resources on the web:
-
 * Corpora: [PAISÀ Corpus](http://www.corpusitaliano.it/en/), [itWaC Corpus](https://wacky.sslmit.unibo.it/doku.php?id=corpora#italian), [Wikipedia extractor and cleaner](https://github.com/attardi/wikiextractor}{Wikipedia extractor and cleaner)
 * Collocations and Idioms: [De Mauro Dictionary](https://dizionario.internazionale.it/), [Italian Proverbs](http://web.tiscali.it/proverbiitaliani/)
 * Italian word embeddings: [Italian Word Embeddings](http://hlt.isti.cnr.it/wordembeddings)

@@ -1,7 +1,7 @@
 # ghigliottin-AI.github.io
 
 ### News
-* **23rd March 2020:** [Guidelines]() are available online
+* **23rd March 2020:** [Guidelines](https://github.com/ghigliottin-AI/ghigliottin-AI.github.io/raw/master/guidelines/EVALITA_2020___Ghigliottin_AI___Guidelines.pdf) are available online
 
 ### Task Description
 Language games draw their challenge and excitement from the richness and ambiguity of natural language, and therefore have attracted the attention of researchers in the fields of Artificial Intelligence and Natural Language Processing.

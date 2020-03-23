@@ -1,14 +1,27 @@
 # ghigliottin-AI.github.io
 
+### News
+* **23rd March 2020:** [Guidelines]() are available online
+
+### Menu
+* [Task Description](#task-description)
+* [Development Data](#development-data)
+* [System Evaluation](#system-evaluation)
+* [Evaluation Metric](#evaluation-metric)
+* [Useful Tips](#useful-tips)
+* [Organizers](#organizers)
+* [Contacts](#contacts)
+
 ### Task Description
 Language games draw their challenge and excitement from the richness and ambiguity of natural language, and therefore have attracted the attention of researchers in the fields of Artificial Intelligence and Natural Language Processing.
 For instance, IBM WatsonTM is a system which successfully challenged human champions of Jeopardy!TM, a game in which contestants are presented with clues in the form of answers, and must phrase their responses in the form of a question [[1]](#1). Other researchers exploited question answering techniques to build an artificial player for _“Who Wants to be a Millionaire?”_ [[2]](#2). Another popular language game is solving crossword puzzles. The first experience reported in the literature is Proverb [[3]](#3), that exploits large libraries of clues and solutions to past crossword puzzles. WebCrow is the first solver for Italian crosswords [[4]](#4).
 
-Following the first edition of the NLP4FUN task [[5]](#5), proposed at EVALITA 2018, we propose a new edition of the task which aim is to design a solver for “The Guillotine” (La Ghigliottina, in Italian) game. It is inspired by the final game of an Italian TV show called “L’eredità”. The game, broadcast by Italian national TV, involves a single player, who is given a set of five words - the clues - each linked in some way to a specific word that represents the unique solution of the game. Words are unrelated to each other, but each of them has a hidden association with the solution. Once the clues are given, the player has one minute to find the solution. For example, given the five clues: pie, bad, Adam, core, eye the solution is apple, because: apple-pie is a kind of pie; bad apple is a way to refer to a trouble maker; Adam’s apple is the prominent part of men's throat; apple core is the center of the apple; apple of someone's eye is way to refer to someone’s beloved person.  “La Ghigliottina” is a challenging language game which demands knowledge covering a broad range of topics. Artificial players for that game can take advantage of the availability of open repositories on the web, such as Wikipedia, that provide the system with the cultural and linguistic background needed to understand clues [[6]](#6). 
+Following the first edition of the NLP4FUN task [[5]](#5), proposed at EVALITA 2018, we propose a new edition of the task which aim is to design a solver for “The Guillotine” (La Ghigliottina, in Italian) game. It is inspired by the final game of an Italian TV show called “L’eredità”. The game, broadcast by Italian national TV, involves a single player, who is given a set of five words - the clues - each linked in some way to a specific word that represents the unique solution of the game. Words are unrelated to each other, but each of them has a hidden association with the solution. Once the clues are given, the player has one minute to find the solution. For example, given the five clues: pie, bad, Adam, core, eye the solution is apple, because: apple-pie is a kind of pie; bad apple is a way to refer to a trouble maker; Adam’s apple is the prominent part of men's throat; apple core is the center of the apple; apple of someone's eye is way to refer to someone’s beloved person.
+“La Ghigliottina” is a challenging language game which demands knowledge covering a broad range of topics. Artificial players for that game can take advantage of the availability of open repositories on the web, such as Wikipedia, that provide the system with the cultural and linguistic background needed to understand clues [[6]](#6). 
 Participants should build an artificial player able to solve “La Ghigliottina”.
 
-### Data Format
-We will provide a set of both training and testing games in JSON format:
+### Development Data
+We provide a set of games with their solution taken from the last 4 editions of the TV game as training data. The training data will be released in JSON format:
 
 ```json
 {
@@ -29,10 +42,67 @@ We will provide a set of both training and testing games in JSON format:
 
 The JSON file consists of an array of *games* which contains several JSON objects for each game. Each *game* has an identifier (*id*), an array of five *clues* and one *solution*.
 
-The challenge is organized with the support of Ghigliottiniamo, a mobile app available both for [Android](https://play.google.com/store/apps/details?id=io.quiztime.game&hl=en) and [iOS](https://apps.apple.com/it/app/ghigliottiniamo/id1447355292), to let people challenge each other live on the ghigliottina games aired on TV. 
-In a recent effort, Ghigliottiniamo has implemented an API to allow artificial solvers to take part in the competition. We will adopt this API to evaluate the systems participating in the EVALITA challenge. 
-All participants will obtain instructions on how to connect their system to the Ghigliottiniamo server. We will provide a JSON file containing 300 games along with their solution to be used as training data. The participants can integrate any knowledge resources in their systems except further games. In the evaluation window, 100 games (without solution) will be sent via API from the Ghigliottiniamo server to the systems enrolled in the challenge, which in turn will have to reply with the solution.
-We will exploit the evaluation approach implemented in Ghigliottiniamo which takes into account the accuracy of the system in predicting the correct solution. Moreover, we will try to compare the performance of artificial players with the ones of the users (humans) of the mobile app. This is the first time that we can compare artificial players against humans.
+### System Evaluation
+
+In order to evaluate the AI systems, we will rely on an **API based methodology**. For this we will make use of the Remote Evaluation Server (RES) [Ghigliottiniamo](https://quiztime.net) which currently enables both humans and artificial systems to submit solutions to the TV game in real-time.
+
+We will provide detailed instructions on how to register a system to the RES, and will enable test functionalities to ensure that the system is setup correctly.
+
+During the evaluation period, at **random intervals of time**, the RES will submit to the registered systems a *POST request* containing **a single game challenge**:
+
+```json
+{
+  "game_id": 1003,
+  "clues": ["giro", "data", "buco", "religione", "locale"]
+  "callback_url": https://unique-url-for-submitting-the-solution
+}
+```
+
+The systems must **submit the solution** to the `callback_url` with a *POST request*:
+
+```json
+{
+  "uuid": user-id-obtained-during-the-registration-procedure
+  "game_id": 1003,
+  "solutions": ["solution1", "solution2", ... , "solution100"]
+}
+```
+
+Where `solutions` is a ranked list of **maximum 100 tentative solutions** to the game.
+
+### Evaluation Metric
+
+As evaluation measure, we adopt the standard Mean Reciprocal Rank (MRR). 
+
+<img src="https://latex.codecogs.com/gif.latex?\frac{1}{|G|}\sum_{g&space;\in&space;G}\frac{1}{rank_{g}}" />
+
+where *G* is the set of games and *rank<sub>g</sub>* is the rank of the solution.
+
+Similar to the TV game, where players have one minute to provide the solution, the **GA will discard system solutions received after 60 seconds** from the submitted challenge.
+
+### Useful Tips
+This is a challenging language game which demands knowledge covering a broad range of topics, to understand the clues and identify their connections with potential solution words.
+We list here a number of suggestions to help potential participants to the challenge.
+
+#### List of useful Resources
+
+Previous systems [[6](#6), [7](#7), [8](#8)] have indicated some of the possible connection between clue words and solutions: word co-occurrencence in frequent collocations or idioms, word similarity or word relatedness.
+
+We list a number of useful resources on the web:
+
+* Corpora: [PAISÀ Corpus](http://www.corpusitaliano.it/en/), [itWaC Corpus](https://wacky.sslmit.unibo.it/doku.php?id=corpora#italian), [Wikipedia extractor and cleaner](https://github.com/attardi/wikiextractor}{Wikipedia extractor and cleaner)
+* Collocations and Idioms: [De Mauro Dictionary](https://dizionario.internazionale.it/), [Italian Proverbs](http://web.tiscali.it/proverbiitaliani/)
+* Italian word embeddings: [Italian Word Embeddings](http://hlt.isti.cnr.it/wordembeddings)
+* Word Knowledge representation: [Conceptnet](http://conceptnet.io/)
+
+#### API System Setup
+
+We will provide all technical details to the participants for them to setup their system correctly according to the API methodology illustrated in the [System Evaluation](#system-evaluation) section.
+
+We advise participants to deploy their system on a server (a number of free cloud-based are available such as [heroku](https://www.heroku.com). For testing purposes, participants can make use of *tunnelling* software (such as [localtunnel](https://localtunnel.github.io/www/) that enables a system to run and communicate with the Remote Evaluation Server from a local machine. 
+
+We are aware the API technologies (while being ubiquitous in all IT sectors) are still uncommon in shared tasks, but we decided to adopt them because they offer a unique opportunity to evaluate the systems more robustly and continuously in time.
+We do not want this to be an obstacle for people to participate to the challenge, and therefore we will provide all assistance needed for participants to set up their systems correctly. 
 
 ### References
 [<a name="1">1</a>] D. Ferrucci, E. Brown, J. Chu-Carroll, J. Fan, D. Gondek, A. A. Kalyanpur, A. Lally, J. W. Murdock, E. Nyberg, J. Prager, N. Schlaefer, and C.Welty, “Building Watson: An overview of the DeepQA project,” AI Magazine, vol. 31, no. 3, pp. 59–79, 2010.
@@ -47,6 +117,9 @@ We will exploit the evaluation approach implemented in Ghigliottiniamo which tak
 
 [<a name="6">6</a>] P. Basile, M. de Gemmis, P. Lops, and G. Semeraro, “Solving a complex language game by using knowledge-based word associations discovery”, IEEE Transactions on Computational Intelligence and AI in Games, vol. 8, no. 1, pp. 13-26, 2016.
 
+[<a name="7">7</a>] G. Semeraro, P. Lops, P. Basile, and M. De Gemmis. On the tip of mythought: Playing the guillotine game. InProceedings of the 21st Interna-tional Jont Conference on Artifical Intelligence, IJCAI’09, pages 1543–1548,San Francisco, CA, USA, 2009. Morgan Kaufmann Publishers Inc.  URL http://dl.acm.org/citation.cfm?id=1661445.1661693.6
+
+[<a name="8">8</a>] F. Sangati, A. Pascucci, and J. Monti. Exploiting multiword expressions tosolve “la ghigliottina”. InSixth Evaluation Campaign of Natural LanguageProcessing and Speech Tools for Italian. Final Workshop (EVALITA 2018),pages 1–6, 2018. URLhttp://ceur-ws.org/Vol-2263/paper044.pdf.
 
 ---
 

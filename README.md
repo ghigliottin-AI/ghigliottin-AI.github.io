@@ -69,7 +69,7 @@ As evaluation measure, we adopt the standard Mean Reciprocal Rank (MRR).
 
 where *G* is the set of games and *rank<sub>g</sub>* is the rank of the solution.
 
-Similar to the TV game, where players have one minute to provide the solution, the **GA will discard system solutions received after 60 seconds** from the submitted challenge.
+Similar to the TV game, where players have one minute to provide the solution, the **RES will discard system solutions received after 60 seconds** from the submitted challenge.
 
 ### Useful Tips
 This is a challenging language game which demands knowledge covering a broad range of topics, to understand the clues and identify their connections with potential solution words.

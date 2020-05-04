@@ -1,6 +1,7 @@
 # ghigliottin-AI.github.io
 
 ### News
+* **30th April 2020:** Call for Participation - Fill in [this form](https://forms.gle/pXgWVDiMMUYDgeyM7) if you would like to take part in the challenge.
 * **23rd March 2020:** [Guidelines](https://github.com/ghigliottin-AI/ghigliottin-AI.github.io/raw/master/guidelines/EVALITA_2020___Ghigliottin_AI___Guidelines.pdf) are available online
 
 ### Task Description

@@ -45,8 +45,8 @@ During the evaluation period, at **random intervals of time**, the RES will subm
 ```json
 {
   "game_id": 1003,
-  "clues": ["giro", "data", "buco", "religione", "locale"]
-  "callback_url": https://unique-url-for-submitting-the-solution
+  "clues": ["giro", "data", "buco", "religione", "locale"],
+  "callback_url": "https://unique-url-for-submitting-the-solution"
 }
 ```
 
@@ -54,7 +54,7 @@ The systems must **submit the solution** to the `callback_url` with a *POST requ
 
 ```json
 {
-  "uuid": user-id-obtained-during-the-registration-procedure
+  "uuid": "user-id-obtained-during-the-registration-procedure",
   "game_id": 1003,
   "solutions": ["solution1", "solution2", ... , "solution100"]
 }

@@ -94,6 +94,16 @@ We advise participants to deploy their system on a server (a number of free clou
 We are aware the API technologies (while being ubiquitous in all IT sectors) are still uncommon in shared tasks, but we decided to adopt them because they offer a unique opportunity to evaluate the systems more robustly and continuously in time.
 We do not want this to be an obstacle for people to participate to the challenge, and therefore we will provide all assistance needed for participants to set up their systems correctly. 
 
+###How to partecipate
+Online registration is open: [registration form](https://docs.google.com/forms/d/e/1FAIpQLSeaoRKynqNvpqh0rjgkADvv_-ZMNKPq-EI5FyyOqGAZ8zhLDQ/viewform).
+
+###Important Dates
+* 29th May 2020: development data available to participants
+* 4th September 2020: registration closes
+* 17th - 24rd Sept. 2020: Evaluation Window 
+* 6th November 2020: technical reports due to organisers (camera-ready)
+* 2nd-3rd December 2020: final workshop
+
 ### References
 [<a name="1">1</a>] D. Ferrucci, E. Brown, J. Chu-Carroll, J. Fan, D. Gondek, A. A. Kalyanpur, A. Lally, J. W. Murdock, E. Nyberg, J. Prager, N. Schlaefer, and C.Welty, “Building Watson: An overview of the DeepQA project,” AI Magazine, vol. 31, no. 3, pp. 59–79, 2010.
 

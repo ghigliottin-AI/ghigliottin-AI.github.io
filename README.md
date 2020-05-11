@@ -95,11 +95,11 @@ We advise participants to deploy their system on a server (a number of free clou
 We are aware the API technologies (while being ubiquitous in all IT sectors) are still uncommon in shared tasks, but we decided to adopt them because they offer a unique opportunity to evaluate the systems more robustly and continuously in time.
 We do not want this to be an obstacle for people to participate to the challenge, and therefore we will provide all assistance needed for participants to set up their systems correctly. 
 
-###How to partecipate
+### How to partecipate
 
 Online registration is open: [registration form](https://docs.google.com/forms/d/e/1FAIpQLSeaoRKynqNvpqh0rjgkADvv_-ZMNKPq-EI5FyyOqGAZ8zhLDQ/viewform).
 
-###Important Dates
+### Important Dates
 
 * 29th May 2020: development data available to participants
 * 4th September 2020: registration closes

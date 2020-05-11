@@ -1,6 +1,7 @@
 # ghigliottin-AI.github.io
 
 ### News
+* **30th April 2020:** Call for Participation - Fill in [this form](https://forms.gle/pXgWVDiMMUYDgeyM7) if you would like to take part in the challenge.
 * **23rd March 2020:** [Guidelines](https://github.com/ghigliottin-AI/ghigliottin-AI.github.io/raw/master/guidelines/EVALITA_2020___Ghigliottin_AI___Guidelines.pdf) are available online
 
 ### Task Description
@@ -44,8 +45,8 @@ During the evaluation period, at **random intervals of time**, the RES will subm
 ```json
 {
   "game_id": 1003,
-  "clues": ["giro", "data", "buco", "religione", "locale"]
-  "callback_url": https://unique-url-for-submitting-the-solution
+  "clues": ["giro", "data", "buco", "religione", "locale"],
+  "callback_url": "https://unique-url-for-submitting-the-solution"
 }
 ```
 
@@ -53,7 +54,7 @@ The systems must **submit the solution** to the `callback_url` with a *POST requ
 
 ```json
 {
-  "uuid": user-id-obtained-during-the-registration-procedure
+  "uuid": "user-id-obtained-during-the-registration-procedure",
   "game_id": 1003,
   "solutions": ["solution1", "solution2", ... , "solution100"]
 }

@@ -96,9 +96,11 @@ We are aware the API technologies (while being ubiquitous in all IT sectors) are
 We do not want this to be an obstacle for people to participate to the challenge, and therefore we will provide all assistance needed for participants to set up their systems correctly. 
 
 ###How to partecipate
+
 Online registration is open: [registration form](https://docs.google.com/forms/d/e/1FAIpQLSeaoRKynqNvpqh0rjgkADvv_-ZMNKPq-EI5FyyOqGAZ8zhLDQ/viewform).
 
 ###Important Dates
+
 * 29th May 2020: development data available to participants
 * 4th September 2020: registration closes
 * 17th - 24rd Sept. 2020: Evaluation Window 
@@ -106,6 +108,7 @@ Online registration is open: [registration form](https://docs.google.com/forms/d
 * 2nd-3rd December 2020: final workshop
 
 ### References
+
 [<a name="1">1</a>] D. Ferrucci, E. Brown, J. Chu-Carroll, J. Fan, D. Gondek, A. A. Kalyanpur, A. Lally, J. W. Murdock, E. Nyberg, J. Prager, N. Schlaefer, and C.Welty, “Building Watson: An overview of the DeepQA project,” AI Magazine, vol. 31, no. 3, pp. 59–79, 2010.
 
 [<a name="2">2</a>] P. Molino, P. Lops, G. Semeraro, M. de Gemmis, and P. Basile. Playing with knowledge: A virtual player for who wants to be a millionaire? that leverages question answering techniques. Artificial Intelligence, vol. 222, pp. 157-181, 2015.

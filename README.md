@@ -1,8 +1,23 @@
 # ghigliottin-AI.github.io
 
-### News
-* **30th April 2020:** Call for Participation - Fill in [this form](https://forms.gle/pXgWVDiMMUYDgeyM7) if you would like to take part in the challenge.
+## News
+* **24th May 2020:** Published the [System Registration guidelines](#system-registration) with instructions on how to register and setup your system and download the **Development Data**.
+* **30th April 2020:** Call for Participation - Fill in the [Evalita 2020 Registration Form](https://forms.gle/pXgWVDiMMUYDgeyM7) if you would like to take part in the challenge.
 * **23rd March 2020:** [Guidelines](https://github.com/ghigliottin-AI/ghigliottin-AI.github.io/raw/master/guidelines/EVALITA_2020___Ghigliottin_AI___Guidelines.pdf) are available online
+
+## How to partecipate
+
+- Fill in the [Evalita 2020 Registration Form](https://docs.google.com/forms/d/e/1FAIpQLSeaoRKynqNvpqh0rjgkADvv_-ZMNKPq-EI5FyyOqGAZ8zhLDQ/viewform)
+- Follow the [System Registration guidelines](#system-registration) to register and setup your system and download the **Development Data**
+
+## Important Dates
+
+* 4th September 2020: registration closes
+* 17th - 24rd Sept. 2020: Evaluation Window 
+* 6th November 2020: technical reports due to organisers (camera-ready)
+* 2nd-3rd December 2020: final workshop
+
+## Introduction
 
 ### Task Description
 Language games draw their challenge and excitement from the richness and ambiguity of natural language, and therefore have attracted the attention of researchers in the fields of Artificial Intelligence and Natural Language Processing.
@@ -13,54 +28,42 @@ Following the first edition of the NLP4FUN task [[5]](#5), proposed at EVALITA 2
 Participants are asked to build an artificial player able to solve "La Ghigliottina". They can take advantage of solutions adopted by previous systems [[6](#6), [7](#7), [8](#8)] and the availability of open repositories on the web (see our [tips](#useful-tips)).
 
 ### Development Data
-We provide a set of games with their solution taken from the last 4 editions of the TV game as training data. The training data will be released in JSON format:
+We provide a set of 300 games with their solution taken from the last editions of the TV game as training data. The training data will be released in JSON format:
 
 ```json
-{
-  "games":[
-  {
-        "id":1000,
-        "clues":["uomo","cane","musica","casa","pietra"],
-        "solution":"chiesa"
-  },
-  {
-        "id":1001,
-        "clues":["doppio","carta","soldi","pasta","regalo"],
-        "solution":"pacco"
-  }
-  ]
-}
+[
+   {
+      "w1": "posto",
+      "w2": "artificiale",
+      "w3": "lavaggio",
+      "w4": "allenare",
+      "w5": "gallina",
+      "solution": "cervello"
+   },
+   {
+      "w1": "essere",
+      "w2": "comparsa",
+      "w3": "x men",
+      "w4": "ronaldo",
+      "w5": "mondiale",
+      "solution": "fenomeno"
+   },
+   ...
+]
 ```
 
-The JSON file consists of an array of *games* which contains several JSON objects for each game. Each *game* has an identifier (*id*), an array of five *clues* and one *solution*.
+The JSON file consists of an array of *games* which contains several JSON objects for each game. In each *game* we have 5 clues (*w1, w2, ..., w5*) and the *solution*.
+
+Please refer to the **API Setup** section [below](#system-registration) to register your system and download the development data.
+
 
 ### System Evaluation
 
-In order to evaluate the AI systems, we will rely on an **API based methodology**. For this we will make use of the Remote Evaluation Server (RES) [Ghigliottiniamo](https://quiztime.net) which currently enables both humans and artificial systems to submit solutions to the TV game in real-time.
+In order to evaluate the AI systems, we rely on an **API based methodology**. For this we use the _Remote Evaluation Server_ (RES) [Ghigliottiniamo](https://quiztime.net) which currently enables both humans and artificial systems to submit solutions to the TV game in real-time.
 
-We will provide detailed instructions on how to register a system to the RES, and will enable test functionalities to ensure that the system is setup correctly.
+During the evaluation period, at **random intervals of time**, the RES will submit to the registered systems a request with **a single game challenge**. The systems must reply back to the RES with a ranked list of **maximum 100 tentative solutions** to the game.
 
-During the evaluation period, at **random intervals of time**, the RES will submit to the registered systems a *POST request* containing **a single game challenge**:
-
-```json
-{
-  "game_id": 1003,
-  "clues": ["giro", "data", "buco", "religione", "locale"],
-  "callback_url": "https://unique-url-for-submitting-the-solution"
-}
-```
-
-The systems must **submit the solution** to the `callback_url` with a *POST request*:
-
-```json
-{
-  "uuid": "user-id-obtained-during-the-registration-procedure",
-  "game_id": 1003,
-  "solutions": ["solution1", "solution2", ... , "solution100"]
-}
-```
-
-Where `solutions` is a ranked list of **maximum 100 tentative solutions** to the game.
+Please refer to the **API Setup** section [below](#system-registration) to understand how to register your system to the RES, and how to test it to ensure that the system is setup correctly.
 
 ### Evaluation Metric
 
@@ -76,36 +79,13 @@ Similar to the TV game, where players have one minute to provide the solution, t
 This is a challenging language game which demands knowledge covering a broad range of topics, to understand the clues and identify their connections with potential solution words.
 We list here a number of suggestions to help potential participants to the challenge.
 
-#### List of useful Resources
-
 Previous systems [[6](#6), [7](#7), [8](#8)] have indicated some of the possible connection between clue words and solutions: word co-occurrencence in frequent collocations or idioms, word similarity or word relatedness.
 
-We list a number of useful resources on the web:
+We list a number of **useful resources** on the web:
 * Corpora: [PAISÀ Corpus](http://www.corpusitaliano.it/en/), [itWaC Corpus](https://wacky.sslmit.unibo.it/doku.php?id=corpora#italian), [Wikipedia extractor and cleaner](https://github.com/attardi/wikiextractor}{Wikipedia extractor and cleaner)
 * Collocations and Idioms: [De Mauro Dictionary](https://dizionario.internazionale.it/), [Italian Proverbs](http://web.tiscali.it/proverbiitaliani/)
 * Italian word embeddings: [Italian Word Embeddings](http://hlt.isti.cnr.it/wordembeddings)
 * Word Knowledge representation: [Conceptnet](http://conceptnet.io/)
-
-#### API System Setup
-
-We will provide all technical details to the participants for them to setup their system correctly according to the API methodology illustrated in the [System Evaluation](#system-evaluation) section.
-
-We advise participants to deploy their system on a server (a number of free cloud-based are available such as [heroku](https://www.heroku.com). For testing purposes, participants can make use of *tunnelling* software (such as [localtunnel](https://localtunnel.github.io/www/) that enables a system to run and communicate with the Remote Evaluation Server from a local machine. 
-
-We are aware the API technologies (while being ubiquitous in all IT sectors) are still uncommon in shared tasks, but we decided to adopt them because they offer a unique opportunity to evaluate the systems more robustly and continuously in time.
-We do not want this to be an obstacle for people to participate to the challenge, and therefore we will provide all assistance needed for participants to set up their systems correctly. 
-
-### How to partecipate
-
-Online registration is open: [registration form](https://docs.google.com/forms/d/e/1FAIpQLSeaoRKynqNvpqh0rjgkADvv_-ZMNKPq-EI5FyyOqGAZ8zhLDQ/viewform).
-
-### Important Dates
-
-* 29th May 2020: development data available to participants
-* 4th September 2020: registration closes
-* 17th - 24rd Sept. 2020: Evaluation Window 
-* 6th November 2020: technical reports due to organisers (camera-ready)
-* 2nd-3rd December 2020: final workshop
 
 ### References
 
@@ -127,7 +107,99 @@ Online registration is open: [registration form](https://docs.google.com/forms/d
 
 ---
 
-### Organizers
+## System Registration
+<a name="system-registration"></a>
+
+This challanges uses an **API based infrustructure** to connect to the _Remote Evaluation Server_ (RES) [Ghigliottiniamo](https://quiztime.net).
+
+In order to register a new system please go to the following URL:
+
+https://ghigliottina.marlove.net/www/ghigliottin-ai
+
+and enter your e-mail address, your *AI System Name* (choose wisely), and the *Webhook URL* where the RES system can send you the requests. The Webhook URL can be changed later, so if you just want to get started you can use a placeholder (e.g., http://anyurl.com).
+
+After clicking the submit button, you will see the following information:
+
+```
+UUID: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Authorization: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Test webhook link
+Download dataset link
+```
+
+This info will be also sent to the email your specified. 
+
+**IMPORTANT**: PLEASE SAVE THIS INFORMATION IN A SAFE PLACE AND DO NOT PUBLISH IT PUBLICLY
+
+At any point you will be able to access your `Account Webpage` at the following URL:
+
+[https://ghigliottina.marlove.net/www/ghigliottin-ai/account.php?uuid=`<UUID>`&secret=`<secret>`&authorization=`<authorization>`]()
+
+by replacing the *UUID*, *secret* and *authorization* keys accordingly.
+
+### Download Development Data
+
+In order to download the Development Data click on the **Download dataset** link after registering the system (see above) or use the following URL:
+
+[https://ghigliottina.marlove.net/api/v1/read/wh_dataset.php?uuid=`<UUID>`&secret=`<secret>`]()
+
+### Setup and test the API
+
+In order to make sure your system API infrastructure is properly setup for the evaluation phase, we have implemented a test functionality.
+
+From your `Account Webpage` click on the **Test webhook** link.
+
+The webpage will show you a popup message with a confirmation of whether it was able to ivoke your Webhook URL.
+
+If so, you should have received a POST request to the web-hook you specified with following payload:
+
+```json
+{
+  "game_id": 111, 
+  "w1":"string1", 
+  "w2": "string2", 
+  "w3": "string3", 
+  "w4": "string4", 
+  "w5": "string5", 
+  "callback": "<callback_url>"}
+```
+
+The w1,...,w5 in the payload is a random game from the Development Data.
+
+You can check that the POST request was sent by the official RES by checking if the *Authorization* field in the header of the request matches the authorization string you received after registering the system.
+
+At this point you should send a POST request to the `callback URL` with the `secret` key in the `Authorization` field of the header and the following payload:
+```json
+{
+  "game_id": 111, 
+  "uuid": "<UUID>", 
+  "solution":"solution1, solution2, solution3, ..., solution100"
+}
+```
+
+Where `solution` contains a (comma separated) ranked list of **maximum 100 tentative solutions** to the game.
+
+<!-- ```
+curl --location --request POST 'https://ghigliottina.marlove.net/api/v1/create/wh_solution.php' \
+--header 'Authorization: <secret>' \
+--form 'game_id=111' \
+--form 'solution=solution1, solution2, solution3, ..., solution100' \
+--form 'uuid=0231a2e6-9966-11ea-8ea7-4a535f44e15a'
+``` -->
+
+
+### Useful tips
+
+We advise participants to deploy their system on a server (a number of free cloud-based are available such as [heroku](https://www.heroku.com). For testing purposes, participants can make use of *tunnelling* software (such as [localtunnel](https://localtunnel.github.io/www/) that enables a system to run and communicate with the Remote Evaluation Server from a local machine. 
+
+We are aware the API technologies (while being ubiquitous in all IT sectors) are still uncommon in shared tasks, but we decided to adopt them because they offer a unique opportunity to evaluate the systems more robustly and continuously in time.
+We do not want this to be an obstacle for people to participate to the challenge, and therefore we will provide all assistance needed for participants to set up their systems correctly. 
+
+---
+
+## Organizers
 * Pierpaolo Basile, Dipartimento di Informatica, Università degli Studi di Bari Aldo Moro, pierpaolo.basile@uniba.it 
 * Lucia Siciliani, Dipartimento di Informatica, Università degli Studi di Bari Aldo Moro, lucia.siciliani@uniba.it 
 * Federico Sangati, Università di Napoli "L'Orientale" federico.sangati@gmail.com 
@@ -135,5 +207,5 @@ Online registration is open: [registration form](https://docs.google.com/forms/d
 * Antonio Pascucci, Università di Napoli "L'Orientale", apascucci@unior.it 
 * Marco Lovetere, Ghigliottiniamo, marlove@gmail.com 
 
-### Contacts
+## Contacts
 If you have any questions, please contact us: <ghigliottinai.evalita@gmail.com>

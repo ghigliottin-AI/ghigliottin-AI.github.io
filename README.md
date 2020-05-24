@@ -118,18 +118,20 @@ https://ghigliottina.marlove.net/www/ghigliottin-ai
 
 and enter your e-mail address, your *AI System Name* (choose wisely), and the *Webhook URL* where the RES system can send you the requests. The Webhook URL can be changed later, so if you just want to get started you can use a placeholder (e.g., http://anyurl.com).
 
-After clicking the submit button, you will see the following information:
+After clicking the submit button, you will be redirected to your `Account Webpage` with the following information:
 
 ```
 UUID: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Authorization: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Webhook URL	<the_chosen_webhook>
 
 Test webhook link
+Edit webhook
 Download dataset link
 ```
 
-This info will be also sent to the email your specified. 
+This info will be also sent to the email you specified. 
 
 **IMPORTANT**: PLEASE SAVE THIS INFORMATION IN A SAFE PLACE AND DO NOT PUBLISH IT PUBLICLY
 
@@ -141,9 +143,13 @@ by replacing the *UUID*, *secret* and *authorization* keys accordingly.
 
 ### Download Development Data
 
-In order to download the Development Data click on the **Download dataset** link after registering the system (see above) or use the following URL:
+In order to download the Development Data click on the **Download dataset** link in your `Account Webpage`  or use the following URL:
 
 [https://ghigliottina.marlove.net/api/v1/read/wh_dataset.php?uuid=`<UUID>`&secret=`<secret>`]()
+
+### Change your webhook
+
+At any moment you can change your webhook by clicking on **Edit webhook** in your `Account Webpage`.
 
 ### Setup and test the API
 

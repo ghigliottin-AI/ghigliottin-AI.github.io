@@ -101,20 +101,20 @@ We list a number of **useful resources** on the web:
 
 [<a name="6">6</a>] P. Basile, M. de Gemmis, P. Lops, and G. Semeraro, “Solving a complex language game by using knowledge-based word associations discovery”, IEEE Transactions on Computational Intelligence and AI in Games, vol. 8, no. 1, pp. 13-26, 2016.
 
-[<a name="7">7</a>] G. Semeraro, P. Lops, P. Basile, and M. De Gemmis. On the tip of mythought: Playing the guillotine game. InProceedings of the 21st Interna-tional Jont Conference on Artifical Intelligence, IJCAI’09, pages 1543–1548,San Francisco, CA, USA, 2009. Morgan Kaufmann Publishers Inc.  URL http://dl.acm.org/citation.cfm?id=1661445.1661693.6
+[<a name="7">7</a>] G. Semeraro, P. Lops, P. Basile, and M. De Gemmis. On the tip of mythought: Playing the guillotine game. InProceedings of the 21st Interna-tional Jont Conference on Artifical Intelligence, IJCAI’09, pages 1543–1548,San Francisco, CA, USA, 2009. Morgan Kaufmann Publishers Inc.  URL [http://dl.acm.org/citation.cfm?id=1661445.1661693.6](http://dl.acm.org/citation.cfm?id=1661445.1661693.6)
 
-[<a name="8">8</a>] F. Sangati, A. Pascucci, and J. Monti. Exploiting multiword expressions tosolve “la ghigliottina”. InSixth Evaluation Campaign of Natural LanguageProcessing and Speech Tools for Italian. Final Workshop (EVALITA 2018),pages 1–6, 2018. URLhttp://ceur-ws.org/Vol-2263/paper044.pdf.
+[<a name="8">8</a>] F. Sangati, A. Pascucci, and J. Monti. Exploiting multiword expressions tosolve “la ghigliottina”. InSixth Evaluation Campaign of Natural LanguageProcessing and Speech Tools for Italian. Final Workshop (EVALITA 2018),pages 1–6, 2018. URL [http://ceur-ws.org/Vol-2263/paper044.pdf](http://ceur-ws.org/Vol-2263/paper044.pdf)
 
 ---
+<a name="system-registration"></a>
 
 ## System Registration
-<a name="system-registration"></a>
 
 This challanges uses an **API based infrustructure** to connect to the _Remote Evaluation Server_ (RES) [Ghigliottiniamo](https://quiztime.net).
 
 In order to register a new system please go to the following URL:
 
-https://ghigliottina.marlove.net/www/ghigliottin-ai
+[https://ghigliottina.marlove.net/www/ghigliottin-ai](https://ghigliottina.marlove.net/www/ghigliottin-ai)
 
 and enter your e-mail address, your *AI System Name* (choose wisely), and the *Webhook URL* where the RES system can send you the requests. The Webhook URL can be changed later, so if you just want to get started you can use a placeholder (e.g., http://anyurl.com).
 

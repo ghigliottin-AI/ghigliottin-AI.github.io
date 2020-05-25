@@ -68,11 +68,9 @@ Please refer to the **API Setup** section [below](#system-registration) to under
 
 ### Evaluation Metric
 
-As evaluation measure, we adopt the standard Mean Reciprocal Rank (MRR). 
+As evaluation measure, we adopt the standard **accuracy score**:
 
-<img src="https://latex.codecogs.com/gif.latex?\frac{1}{|G|}\sum_{g&space;\in&space;G}\frac{1}{rank_{g}}" />
-
-where *G* is the set of games and *rank<sub>g</sub>* is the rank of the solution.
+<img src="https://latex.codecogs.com/gif.latex?\frac{\text{solved%20games}}{\text{total%20games}}" />
 
 Similar to the TV game, where players have one minute to provide the solution, the **RES will discard system solutions received after 60 seconds** from the submitted challenge.
 
@@ -182,18 +180,18 @@ At this point you should send a POST request to the `callback URL` with the `sec
 {
   "game_id": 111, 
   "uuid": "<UUID>", 
-  "solution":"solution1, solution2, solution3, ..., solution100"
+  "solution":"your solution"
 }
 ```
 
-Where `solution` contains a (comma separated) ranked list of **maximum 100 tentative solutions** to the game.
+Where `solution` contains a **single solution** to the game.
 
 <!-- ```
 curl --location --request POST 'https://ghigliottina.marlove.net/api/v1/create/wh_solution.php' \
 --header 'Authorization: <secret>' \
 --form 'game_id=111' \
---form 'solution=solution1, solution2, solution3, ..., solution100' \
---form 'uuid=0231a2e6-9966-11ea-8ea7-4a535f44e15a'
+--form 'solution=your solution' \
+--form 'uuid=<UUID>'
 ``` -->
 
 
@@ -215,4 +213,5 @@ We do not want this to be an obstacle for people to participate to the challenge
 * Marco Lovetere, Ghigliottiniamo, marlove@gmail.com 
 
 ## Contacts
-If you have any questions, please contact us: <ghigliottinai.evalita@gmail.com>
+If you have any questions, please contact us: <ghigliottinai.evalita@gmail.com> or join our Google Group [here](https://groups.google.com/forum/#!forum/ghigliottin-ai).
+

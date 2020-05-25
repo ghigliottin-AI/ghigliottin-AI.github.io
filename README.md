@@ -9,6 +9,7 @@
 
 - Fill in the [Evalita 2020 Registration Form](https://docs.google.com/forms/d/e/1FAIpQLSeaoRKynqNvpqh0rjgkADvv_-ZMNKPq-EI5FyyOqGAZ8zhLDQ/viewform)
 - Follow the [System Registration guidelines](#system-registration) to register and setup your system and download the **Development Data**
+- Join our Google Group [here](https://groups.google.com/forum/#!forum/ghigliottin-ai)
 
 ## Important Dates
 

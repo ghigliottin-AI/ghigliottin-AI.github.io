@@ -5,7 +5,7 @@
 * **30th April 2020:** Call for Participation - Fill in the [Evalita 2020 Registration Form](https://forms.gle/pXgWVDiMMUYDgeyM7) if you would like to take part in the challenge.
 * **23rd March 2020:** [Guidelines](https://github.com/ghigliottin-AI/ghigliottin-AI.github.io/raw/master/guidelines/EVALITA_2020___Ghigliottin_AI___Guidelines.pdf) are available online
 
-## How to partecipate
+## How to participate
 
 - Fill in the [Evalita 2020 Registration Form](https://docs.google.com/forms/d/e/1FAIpQLSeaoRKynqNvpqh0rjgkADvv_-ZMNKPq-EI5FyyOqGAZ8zhLDQ/viewform)
 - Follow the [System Registration guidelines](#system-registration) to register and setup your system and download the **Development Data**

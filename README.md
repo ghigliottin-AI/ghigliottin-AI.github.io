@@ -26,7 +26,7 @@ For instance, IBM WatsonTM is a system which successfully challenged human champ
 
 Following the first edition of the NLP4FUN task [[5]](#5), proposed at EVALITA 2018, we propose a new edition of the task which aim is to **design a solver for “The Guillotine” (La Ghigliottina, in Italian) game**. It is inspired by the final game of an Italian TV show called “L’eredità”. The game, broadcast by Italian national TV, involves a single player, who is **given a set of five words - the clues - each linked in some way to a specific word that represents the unique solution of the game**. Words are unrelated to each other, but each of them has a hidden association with the solution. Once the clues are given, the player has one minute to find the solution. For example, **given the five clues: pie, bad, Adam, core, eye the solution is apple**, because: apple-pie is a kind of pie; bad apple is a way to refer to a trouble maker; Adam’s apple is the prominent part of men's throat; apple core is the center of the apple; apple of someone's eye is way to refer to someone’s beloved person.
 
-Participants are asked to build an artificial player able to solve "La Ghigliottina". They can take advantage of solutions adopted by previous systems [[6](#6), [7](#7), [8](#8)] and the availability of open repositories on the web (see our [tips](#useful-tips)).
+Participants are asked to build an artificial player able to solve "La Ghigliottina". They can take advantage of solutions adopted by previous systems [[6](#6), [7](#7), [8](#8)] and the availability of open repositories on the web (see our [list of useful resources](#useful-resources)).
 
 ### Development Data
 We provide a set of 300 games with their solution taken from the last editions of the TV game as training data. The training data will be released in JSON format:
@@ -74,7 +74,8 @@ As evaluation measure, we adopt the standard **accuracy score**:
 
 Similar to the TV game, where players have one minute to provide the solution, the **RES will discard system solutions received after 60 seconds** from the submitted challenge.
 
-### Useful Tips
+### List of useful Resources
+<a name="useful-resources"></a>
 This is a challenging language game which demands knowledge covering a broad range of topics, to understand the clues and identify their connections with potential solution words.
 We list here a number of suggestions to help potential participants to the challenge.
 
@@ -109,7 +110,7 @@ We list a number of **useful resources** on the web:
 
 ## System Registration
 
-This challanges uses an **API based infrustructure** to connect to the _Remote Evaluation Server_ (RES) [Ghigliottiniamo](https://quiztime.net).
+This challenge uses an **API based infrastructure** to connect to the _Remote Evaluation Server_ (RES) [Ghigliottiniamo](https://quiztime.net).
 
 In order to register a new system please go to the following URL:
 

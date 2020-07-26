@@ -62,7 +62,7 @@ Please refer to the **API Setup** section [below](#system-registration) to regis
 
 In order to evaluate the AI systems, we rely on an **API based methodology**. For this we use the _Remote Evaluation Server_ (RES) [Ghigliottiniamo](https://quiztime.net) which currently enables both humans and artificial systems to submit solutions to the TV game in real-time.
 
-During the evaluation period, at **random intervals of time**, the RES will submit to the registered systems a request with **a single game challenge**. The systems must reply back to the RES with a ranked list of **maximum 100 tentative solutions** to the game.
+During the evaluation period, at **random intervals of time**, the RES will submit to the registered systems a request with **a single game challenge**. The systems must reply back to the RES with a **single solution** to the game.
 
 Please refer to the **API Setup** section [below](#system-registration) to understand how to register your system to the RES, and how to test it to ensure that the system is setup correctly.
 

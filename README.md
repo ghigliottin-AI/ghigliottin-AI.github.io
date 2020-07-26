@@ -143,9 +143,7 @@ by replacing the *UUID*, *secret* and *authorization* keys accordingly.
 
 ### Download Development Data
 
-In order to download the Development Data click on the **Download dataset** link in your `Account Webpage`  or use the following URL:
-
-[https://ghigliottina.marlove.net/api/v1/read/wh_dataset.php?uuid=`<UUID>`&secret=`<secret>`]()
+In order to download the Development Data click on the **Download dataset** link in your `Account Webpage`.
 
 ### Change your webhook
 

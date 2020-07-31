@@ -14,7 +14,7 @@
 ## Important Dates
 
 * 4th September 2020: registration closes
-* 17th - 24rd Sept. 2020: Evaluation Window 
+* 25th Sept. - 2nd Oct. 2020: Evaluation Window 
 * 6th November 2020: technical reports due to organisers (camera-ready)
 * 2nd-3rd December 2020: final workshop
 

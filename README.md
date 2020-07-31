@@ -155,7 +155,7 @@ In order to make sure your system API infrastructure is properly setup for the e
 
 From your `Account Webpage` click on the **Test webhook** link.
 
-The webpage will show you a popup message with a confirmation of whether it was able to ivoke your Webhook URL.
+The webpage will show you a popup message with a confirmation of whether it was able to invoke your Webhook URL.
 
 If so, you should have received a POST request to the web-hook you specified with following payload:
 

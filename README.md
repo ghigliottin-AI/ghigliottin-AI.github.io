@@ -149,15 +149,14 @@ In order to download the Development Data click on the **Download dataset** link
 
 At any moment you can change your webhook by clicking on **Edit webhook** in your `Account Webpage`.
 
-### Setup and test the API
+### Setup and API testing
 
-In order to make sure your system API infrastructure is properly setup for the evaluation phase, we have implemented a test functionality.
+The **webhook URL** you specified should accept POST requests and return a **200 status code** as a success confirmation.
 
+In order to make sure your system API infrastructure is properly setup for the evaluation phase, we have implemented a **test functionality**.
 From your `Account Webpage` click on the **Test webhook** link.
-
-The webpage will show you a popup message with a confirmation of whether it was able to invoke your Webhook URL.
-
-If so, you should have received a POST request to the web-hook you specified with following payload:
+The webpage will show you a popup message with a confirmation of whether it was able to invoke your webhook URL.
+If so, you should have received a POST request to the webhook you specified with following payload:
 
 ```json
 {
@@ -172,9 +171,9 @@ If so, you should have received a POST request to the web-hook you specified wit
 
 The w1,...,w5 in the payload is a random game from the Development Data.
 
-You can check that the POST request was sent by the official RES by checking if the *Authorization* field in the header of the request matches the authorization string you received after registering the system.
+You can verify that the POST request was sent by the official RES by checking if the *Authorization* field in the header of the request matches the authorization string you received after registering the system.
 
-At this point you should send a POST request to the `callback URL` with the `secret` key in the `Authorization` field of the header and the following payload:
+At this point you should send a POST request to the `callback URL` with the `secret` key in the `Authorization` field of the header and the following payload (as form data):
 ```json
 {
   "game_id": 111, 
@@ -185,14 +184,36 @@ At this point you should send a POST request to the `callback URL` with the `sec
 
 Where `solution` contains a **single solution** to the game.
 
-<!-- ```
-curl --location --request POST 'https://ghigliottina.marlove.net/api/v1/create/wh_solution.php' \
---header 'Authorization: <secret>' \
---form 'game_id=111' \
---form 'solution=your solution' \
---form 'uuid=<UUID>'
-``` -->
+This is a list with some implementation of the POST request in various programming languages:
 
+**Curl**
+```
+curl --location --request POST '<callback_url>' \
+--header 'Authorization: <secret>' \
+--form 'game_id=<game_id>' \
+--form 'solution=<solution>' \
+--form 'uuid=<UUID>'
+```
+
+**Java - Unirest**
+```
+Unirest.setTimeouts(0, 0);
+HttpResponse<String> response = Unirest.post("<callback_url>")
+  .header("Authorization", "<secret>")
+  .multiPartContent()  .field("game_id", "<game_id>")
+  .field("solution", "<solution>")
+  .field("uuid", "<UUID>")
+  .asString();
+```
+
+**Python - requests**
+```
+requests.request(
+   'POST', '<callback_url>', 
+   headers={'Authorization': '<secret>'}, 
+   data = {'game_id': '<game_id>', 'solution': '<solution>', 'uuid': '<UUID>'}, 
+)
+```
 
 ### Useful tips
 

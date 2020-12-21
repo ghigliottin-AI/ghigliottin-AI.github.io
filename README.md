@@ -4,7 +4,7 @@
 * **24th May 2020:** Published the [System Registration guidelines](#system-registration) with instructions on how to register and setup your system and download the **Development Data**.
 * **30th April 2020:** Call for Participation - Fill in the [Evalita 2020 Registration Form](https://forms.gle/pXgWVDiMMUYDgeyM7) if you would like to take part in the challenge.
 * **23rd March 2020:** [Guidelines](https://github.com/ghigliottin-AI/ghigliottin-AI.github.io/raw/master/guidelines/EVALITA_2020___Ghigliottin_AI___Guidelines.pdf) are available online
-* **6th November 2020:** Publication available
+* **6th November 2020:** Publications available
 
 ## Publications
 - Ghigliottin-AI@EVALITA2020: Evaluating Artificial Players for the Language Game “La Ghigliottina”. Pierpaolo Basile, Marco Lovetere, Johanna Monti, Antonio Pascucci, Federico Sangati and Lucia Siciliani. [PAPER](http://ceur-ws.org/Vol-2765/paper155.pdf), [VIDEO](https://vimeo.com/487847098) 

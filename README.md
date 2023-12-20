@@ -55,7 +55,10 @@ We provide a set of 300 games with their solution taken from the last editions o
 
 The JSON file consists of an array of *games* which contains several JSON objects for each game. In each *game* we have 5 clues (*w1, w2, ..., w5*) and the *solution*.
 
-Please refer to the **API Setup** section [below](#system-registration) to register your system and download the development data.
+<!-- Please refer to the **API Setup** section [below](#system-registration) to register your system and download the development data. -->
+
+#### Download Development Data
+You can download the development data click [here](dataset.json).
 
 
 ### System Evaluation
